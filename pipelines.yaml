@@ -116,5 +116,5 @@ stages:
                   inputs:
                     artifactName: "dist"
                     downloadPath: "$(System.DefaultWorkingDirectory)"
-                - script: twine upload --repository testpypi dist/dist/* -u $(TWINE_USER_P) -p $(TWINE_PASS_P)
+                - script: twine upload dist/dist/* -u $(TWINE_USER_P) -p $(TWINE_PASS_P)
                   displayName: "Twine upload to PyPi Prod"
