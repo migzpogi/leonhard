@@ -94,7 +94,7 @@ stages:
   - stage: deploy_to_prod
     displayName: "Deploy to PyPi Prod"
     dependsOn:
-      - deploy_to_prod
+      - deploy_to_test
     condition: succeeded()
     jobs:
       - deployment: deploy_to_prod
