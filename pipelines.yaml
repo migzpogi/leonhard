@@ -33,13 +33,13 @@ stages:
           vmImage: "ubuntu-16.04"
         steps:
           - task: UsePythonVersion@0
-              inputs:
-                versionSpec: "3.x"
-              displayName: "Use Python 3.x"
-                - script: python --version
-                  displayName: "Check Python version"
+            inputs:
+              versionSpec: "3.x"
+            displayName: "Use Python 3.x"
+              - script: python --version
+                displayName: "Check Python version"
           - script: python setup.py sdist bdist_wheel
             displayName: "Create wheel"
-          
+
 
 
