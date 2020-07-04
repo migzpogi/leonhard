@@ -32,8 +32,8 @@ stages:
             displayName: "Publish code coverage"
             inputs:
               codeCoverageTool: Cobertura
-              summaryFileLocation: ""
-              reportDirectory: ""
+              summaryFileLocation: "$(System.DefaultWorkingDirectory)//coverage.xml"
+              reportDirectory: "$(System.DefaultWorkingDirectory)//htmlcov"
 
   - stage: build
     displayName: "Build wheel file"
