@@ -21,8 +21,7 @@ stages:
             displayName: "Use Python 3.x"
           - script: python --version
             displayName: "Check Python version"
-          - script: python -m pip install --upgrade pip setuptools wheel twine
-            displayName: "Install tools"
+
 
   - stage: package
     displayName: Package
@@ -36,8 +35,8 @@ stages:
             inputs:
               versionSpec: "3.x"
             displayName: "Use Python 3.x"
-          - script: python --version
-            displayName: "Check Python version"
+          - script: python -m pip install --upgrade pip setuptools wheel twine
+            displayName: "Install tools"
           - script: python setup.py sdist bdist_wheel
             displayName: "Create wheel"
 
