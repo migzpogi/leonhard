@@ -41,9 +41,9 @@ stages:
             displayName: "Create wheel"
           - task: TwineAuthenticate@1
             inputs:
-              pythonUploadServiceConnection: 'pypi-test'
+              pythonUploadServiceConnection: "pypi-test"
 
-          - script: 'twine upload --repository testpypi dist/'
+          - script: "twine upload --repository testpypi dist/*""
 
 
 
