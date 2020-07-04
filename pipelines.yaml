@@ -90,3 +90,31 @@ stages:
                     downloadPath: "$(System.DefaultWorkingDirectory)"
                 - script: twine upload --repository testpypi dist/dist/* -u $(TWINE_USER) -p $(TWINE_PASS)
                   displayName: "Twine upload to PyPi Test"
+
+  - stage: deploy_to_prod
+    displayName: "Deploy to PyPi Prod"
+    dependsOn:
+      - deploy_to_prod
+    condition: succeeded()
+    jobs:
+      - deployment: deploy_to_prod
+        displayName: "Deploy to PyPi Prod"
+        environment: "release"
+        pool:
+          vmImage: "ubuntu-16.04"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: UsePythonVersion@0
+                  inputs:
+                    versionSpec: "3.x"
+                  displayName: "Use Python 3.x"
+                - script: pip install twine
+                  displayName: "Install Twine"
+                - task: DownloadBuildArtifacts@0
+                  inputs:
+                    artifactName: "dist"
+                    downloadPath: "$(System.DefaultWorkingDirectory)"
+                - script: twine upload --repository testpypi dist/dist/* -u $(TWINE_USER_P) -p $(TWINE_PASS_P)
+                  displayName: "Twine upload to PyPi Prod"
