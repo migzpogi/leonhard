@@ -3,3 +3,6 @@ build:
 
 clean:
 	python setup.py clean --all
+
+upload-test:
+	twine upload --repository testpypi dist/*
