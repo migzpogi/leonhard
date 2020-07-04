@@ -43,7 +43,7 @@ stages:
             inputs:
               pythonUploadServiceConnection: 'pypi-test'
 
-          - script: 'twine upload dist/'
+          - script: 'twine upload --repository testpypi dist/'
 
 
 
