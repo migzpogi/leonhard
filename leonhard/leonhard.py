@@ -1,10 +1,6 @@
 from functools import reduce
 
 
-def foo():
-    return 1
-
-
 def get_factors_of_positive_integer(n):
     """
     Gets the factors of a positive integer n
@@ -21,3 +17,30 @@ def get_factors_of_positive_integer(n):
         return factors
     except TypeError:
         raise TypeError("Input must be >= 0.")
+
+
+def generate_fibonacci_sequence(number_of_terms=2, first_term=0, second_term=1):
+    """
+    Generates a Fibonacci sequence
+    :param int number_of_terms: the number of terms to be generated including the first and second
+    :param int first_term: first number in the sequence, must be >= 0
+    :param int second_term: second number in the sequence, must be >= first_term
+    :return [int]: Fibonacci sequence
+    """
+
+    try:
+        if number_of_terms < 2:
+            raise ValueError("Number of terms must be >= 2")
+        if first_term < 0:
+            raise ValueError("First term must be >= 0")
+        if second_term < first_term:
+            raise ValueError("Second term must be >= first term")
+
+        sequence = [first_term, second_term]
+        while len(sequence) != number_of_terms:
+            next_number = sequence[-1] + sequence[-2]
+            sequence.append(next_number)
+
+        return sequence
+    except TypeError:
+        raise TypeError("Input parameters must be positive integers")
