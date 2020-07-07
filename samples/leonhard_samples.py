@@ -16,3 +16,9 @@ print(leonhard.generate_fibonacci_sequence(5))
 # Fibonacci sequence with 5 terms, starting with 3 and 6
 # [3, 6, 9, 15, 24]
 print(leonhard.generate_fibonacci_sequence(5, 3, 6))
+
+# 600851475143 is not prime
+print(leonhard.is_prime(600851475143))
+
+# 7652413 is prime
+print(leonhard.is_prime(7652413))

@@ -14,5 +14,9 @@ A commons library for Project Euler problems.
 ## Functionalities
 * `get_factors_of_positive_integer`: Gets the factors of a given positive integer
 * `generate_fibonacci_sequence`: Generates a Fibonacci sequence
+* `is_prime`: Checks if a number is prime or not
+
+## Samples
+Sample files are found in `samples/`
 
 

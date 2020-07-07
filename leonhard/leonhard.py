@@ -44,3 +44,25 @@ def generate_fibonacci_sequence(number_of_terms=2, first_term=0, second_term=1):
         return sequence
     except TypeError:
         raise TypeError("Input parameters must be positive integers")
+
+
+def is_prime(n):
+    """
+    Checks if the given number n is prime or not
+    :param int n: positive number to be checked
+    :return bool: returns true if prime, else false
+    """
+
+    try:
+        if n < 0:
+            raise ValueError("Input must be >= 0")
+        if n == 0 or n == 1:
+            return False
+
+        factors = get_factors_of_positive_integer(n)
+        if len(factors) > 2:
+            return False
+        else:
+            return True
+    except TypeError:
+        raise TypeError("Input must be positive integers")

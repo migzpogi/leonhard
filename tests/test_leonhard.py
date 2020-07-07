@@ -125,5 +125,34 @@ class TestGenerateFibonacciSequence(unittest.TestCase):
         self.assertEqual(expected, actual)
 
 
+class TestIsPrime(unittest.TestCase):
+
+    def test_if_negative_input_then_it_must_raise_value_error(self):
+        with self.assertRaises(ValueError):
+            leonhard.is_prime(-1)
+
+    def test_if_1_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_prime(1))
+
+    def test_if_0_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_prime(0))
+
+    def test_if_input_is_string_then_it_must_raise_type_error(self):
+        with self.assertRaises(TypeError):
+            leonhard.is_prime("test")
+
+    def test_if_2_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_prime(2))
+
+    def test_if_4_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_prime(4))
+
+    def test_if_7652413_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_prime(7652413))
+
+    def test_if_600851475143_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_prime(600851475143))
+
+
 if __name__ == '__main__':
     unittest.main()
