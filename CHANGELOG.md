@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0 - 08 Jul 2020
+#### Added `is_pythagorean_triplet()`
+
 ## 1.2.0 - 07 Jul 2020
 #### Added
 * Sample files located at `samples/`

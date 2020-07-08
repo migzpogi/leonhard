@@ -154,5 +154,26 @@ class TestIsPrime(unittest.TestCase):
         self.assertFalse(leonhard.is_prime(600851475143))
 
 
+class TestIsPythagoreanTriplet(unittest.TestCase):
+
+    def test_if_input_are_letters_then_it_must_raise_a_type_error(self):
+        with self.assertRaises(TypeError):
+            leonhard.is_pythagorean_triplet('a', 'b', 'c')
+
+    def test_if_input_are_not_a_less_b_less_c_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_pythagorean_triplet(3, 2, 1))
+
+    def test_if_input_is_345_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_pythagorean_triplet(3, 4, 5))
+
+    def test_if_input_is_6810_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_pythagorean_triplet(6, 8, 10))
+
+    def test_if_input_is_17144145_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_pythagorean_triplet(17, 144, 145))
+
+    def test_if_input_is_123_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_pythagorean_triplet(1, 2, 3))
+
 if __name__ == '__main__':
     unittest.main()

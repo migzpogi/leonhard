@@ -15,6 +15,7 @@ A commons library for Project Euler problems.
 * `get_factors_of_positive_integer`: Gets the factors of a given positive integer
 * `generate_fibonacci_sequence`: Generates a Fibonacci sequence
 * `is_prime`: Checks if a number is prime or not
+* `is_pythagorean_triplet`: Checks if a^2 + b^2 = c^2 where a < b < c
 
 ## Samples
 Sample files are found in `samples/`

@@ -66,3 +66,28 @@ def is_prime(n):
             return True
     except TypeError:
         raise TypeError("Input must be positive integers")
+
+
+def is_pythagorean_triplet(a, b, c):
+    """
+    A Pythagorean triplet is a set of three natural numbers a < b < c for which:
+    a^2 + b^2 = c^2
+    Example:    3,4,5
+                3^2 + 4^2 = 5^2
+                9 + 16 = 25
+    :param int a: first number
+    :param int b: second number
+    :param int c: third number
+    :return bool: returns True if a,b, and c are triplets
+    """
+
+    try:
+        if a < b < c:
+            if (a**2 + b**2) == c**2:
+                return True
+            else:
+                return False
+        else:
+            return False
+    except TypeError:
+        raise TypeError("Input must be positive integers")

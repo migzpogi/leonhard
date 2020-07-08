@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="leonhard",
-    version="1.2.0",
+    version="1.3.0",
     author="Migz Estrella",
     author_email="me@migzestrella.com",
     description="A commons library for Project Euler problems.",
