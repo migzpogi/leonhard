@@ -1,7 +1,12 @@
 # Changelog
 
+## 1.4.0 - TBA
+#### Added
+* `count_digits()`
+
 ## 1.3.0 - 08 Jul 2020
-#### Added `is_pythagorean_triplet()`
+#### Added 
+* `is_pythagorean_triplet()`
 
 ## 1.2.0 - 07 Jul 2020
 #### Added

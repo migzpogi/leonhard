@@ -91,3 +91,18 @@ def is_pythagorean_triplet(a, b, c):
             return False
     except TypeError:
         raise TypeError("Input must be positive integers")
+
+
+def count_digits(n):
+    """
+    Returns the number of digits of a given positive integer
+    :param int n: number to count the digits of
+    :return int: number of digits
+    """
+
+    try:
+        if n < 0:
+            raise ValueError("Input must be positive integers")
+        return len(str(n))
+    except TypeError:
+        raise TypeError("Input must be positive integers")

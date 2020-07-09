@@ -22,3 +22,12 @@ print(leonhard.is_prime(600851475143))
 
 # 7652413 is prime
 print(leonhard.is_prime(7652413))
+
+# Is a Pythagorean triplet
+print(leonhard.is_pythagorean_triplet(3, 4, 5))
+
+# Is not a Pythagorean triplet
+print(leonhard.is_pythagorean_triplet(1, 2, 3))
+
+# Number of digits is 3
+print(leonhard.count_digits(256))

@@ -175,5 +175,25 @@ class TestIsPythagoreanTriplet(unittest.TestCase):
     def test_if_input_is_123_then_it_must_return_false(self):
         self.assertFalse(leonhard.is_pythagorean_triplet(1, 2, 3))
 
+
+class TestCountDigits(unittest.TestCase):
+
+    def test_if_input_are_letters_then_it_must_raise_a_type_error(self):
+        with self.assertRaises(TypeError):
+            leonhard.count_digits('a')
+
+    def test_if_input_is_less_than_0_then_it_must_raise_a_value_error(self):
+        with self.assertRaises(ValueError):
+            leonhard.count_digits(-1)
+
+    def test_if_input_is_123_then_it_must_return_3(self):
+        self.assertEqual(leonhard.count_digits(123), 3)
+
+    def test_if_input_is_123456789_then_it_must_return_9(self):
+        self.assertEqual(leonhard.count_digits(123456789), 9)
+
+    def test_if_input_is_0_then_it_must_return_1(self):
+        self.assertEqual(leonhard.count_digits(0), 1)
+
 if __name__ == '__main__':
     unittest.main()
