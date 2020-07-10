@@ -106,3 +106,20 @@ def count_digits(n):
         return len(str(n))
     except TypeError:
         raise TypeError("Input must be positive integers")
+
+
+def generate_collatz_sequence(n, sequence=[]):
+    """
+
+    :param n:
+    :param sequence:
+    :return:
+    """
+    sequence.append(n)
+    get_next = lambda x: int(x / 2) if x % 2 == 0 else (3 * x) + 1
+    next_number = get_next(n)
+    if next_number != 1:
+        generate_collatz_sequence(n, sequence)
+
+    return sequence
+

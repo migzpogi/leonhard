@@ -195,5 +195,11 @@ class TestCountDigits(unittest.TestCase):
     def test_if_input_is_0_then_it_must_return_1(self):
         self.assertEqual(leonhard.count_digits(0), 1)
 
+
+class TestCollatzSequence(unittest.TestCase):
+
+    def test_if_input_is_13_then(self):
+        self.assertEqual(1, leonhard.generate_collatz_sequence(13))
+
 if __name__ == '__main__':
     unittest.main()
