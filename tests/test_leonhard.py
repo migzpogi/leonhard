@@ -198,8 +198,23 @@ class TestCountDigits(unittest.TestCase):
 
 class TestCollatzSequence(unittest.TestCase):
 
-    def test_if_input_is_13_then(self):
-        self.assertEqual(1, leonhard.generate_collatz_sequence(13))
+    def test_if_input_is_13_then_it_must_generate_1340(self):
+        """
+        Must generate [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+        :return:
+        """
+        expected = [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+        actual = leonhard.generate_collatz_sequence(13, [])
+        self.assertEqual(expected, actual)
+
+    def test_if_input_is_837799_then_it_must_generate_(self):
+        """
+        Must generate [10, 5, 16, 8, 4, 2, 1]
+        :return:
+        """
+        expected = [10, 5, 16, 8, 4, 2, 1]
+        actual = leonhard.generate_collatz_sequence(10, [])
+        self.assertEqual(expected, actual)
 
 if __name__ == '__main__':
     unittest.main()
