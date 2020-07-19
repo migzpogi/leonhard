@@ -110,18 +110,24 @@ def count_digits(n):
 
 def generate_collatz_sequence(n, sequence):
     """
-
-    :param n:
-    :param list sequence: an empty list
+    A sequence defined by:
+        n -> n/2 (n is even)
+        n -> 3n + 1 (n is odd)
+    :param int n: term
+    :param list sequence: list that will contain the collatz sequence
     :return:
     """
-    sequence.append(n)
-    get_next = lambda x: int(x / 2) if x % 2 == 0 else (3 * x) + 1
-    next_number = get_next(n)
-    if next_number != 1:
-        generate_collatz_sequence(next_number, sequence)
-    else:
-        sequence.append(1)
+    try:
+        if n <= 0:
+            raise ValueError("N must be a positive integer")
+        sequence.append(n)
+        get_next = lambda x: int(x / 2) if x % 2 == 0 else (3 * x) + 1
+        next_number = get_next(n)
+        if next_number != 1:
+            generate_collatz_sequence(next_number, sequence)
+        else:
+            sequence.append(1)
 
-    return sequence
-
+        return sequence
+    except TypeError:
+        raise TypeError("Input must be positive integers.")

@@ -31,3 +31,6 @@ print(leonhard.is_pythagorean_triplet(1, 2, 3))
 
 # Number of digits is 3
 print(leonhard.count_digits(256))
+
+# Collatz sequence
+print(leonhard.generate_collatz_sequence(10, []))

@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.4.0 - TBA
+## 1.4.0 - 19 Jul 2020
 #### Added
 * `count_digits()`
+* `generate_collatz_sequence()`
 
 ## 1.3.0 - 08 Jul 2020
 #### Added 

@@ -17,6 +17,7 @@ A commons library for Project Euler problems.
 * `is_prime`: Checks if a number is prime or not
 * `is_pythagorean_triplet`: Checks if a^2 + b^2 = c^2 where a < b < c
 * `count_digits`: Counts the number of digits of a given number
+* `generate_collatz_sequence`: Generates a collatz sequence
 
 ## Samples
 Sample files are found in `samples/`
