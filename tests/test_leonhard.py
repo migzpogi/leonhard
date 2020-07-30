@@ -273,6 +273,20 @@ class TestCollatzSequence(unittest.TestCase):
         actual = leonhard.generate_collatz_sequence(837799, [])
         self.assertEqual(expected, actual)
 
+class TestCyclicPermutation(unittest.TestCase):
+
+    def test_if_input_are_letters_then_it_must_raise_a_type_error(self):
+        with self.assertRaises(TypeError):
+            leonhard.generate_cyclic_permutation('a')
+
+    def test_if_input_is_less_than_0_then_it_must_raise_a_value_error(self):
+        with self.assertRaises(ValueError):
+            leonhard.generate_cyclic_permutation(-1)
+
+    def test_if_input_is_123_then_it_must_return_valid(self):
+        expected = [123, 312, 231]
+        actual = leonhard.generate_cyclic_permutation(123)
+        self.assertEqual(expected, actual)
 
 if __name__ == '__main__':
     unittest.main()

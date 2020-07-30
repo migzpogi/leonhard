@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 - TBA
+#### Added
+* `generate_cyclic_permutation()`
+
 ## 1.4.0 - 19 Jul 2020
 #### Added
 * `count_digits()`

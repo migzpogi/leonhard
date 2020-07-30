@@ -1,3 +1,4 @@
+from collections import deque
 from functools import reduce
 
 
@@ -129,5 +130,29 @@ def generate_collatz_sequence(n, sequence):
             sequence.append(1)
 
         return sequence
+    except TypeError:
+        raise TypeError("Input must be positive integers.")
+
+
+def generate_cyclic_permutation(n):
+    """
+    A permutation which shifts all elements of a set by a fixed offset, with the elements shifted off the end inserted
+    back at the beginning
+
+    Given 123, its cyclic permutations are: 123, 312, and 231
+    :param int n: number to get the permutations
+    :return [int]: list of cyclic permutations of n
+    """
+    try:
+        if n < 0:
+            raise ValueError("N must be a positive integer")
+
+        deque_object = deque([char for char in str(n)])
+        cyclic_permutations = []
+        for i in range(len(deque_object)):
+            cyclic_permutations.append(list(deque_object))
+            deque_object.rotate(1)
+
+        return [int("".join(p)) for p in cyclic_permutations]
     except TypeError:
         raise TypeError("Input must be positive integers.")
