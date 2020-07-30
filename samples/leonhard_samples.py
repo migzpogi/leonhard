@@ -34,3 +34,6 @@ print(leonhard.count_digits(256))
 
 # Collatz sequence
 print(leonhard.generate_collatz_sequence(10, []))
+
+# Cyclic permutation
+print(leonhard.generate_cyclic_permutation(123))
