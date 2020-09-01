@@ -156,3 +156,30 @@ def generate_cyclic_permutation(n):
         return [int("".join(p)) for p in cyclic_permutations]
     except TypeError:
         raise TypeError("Input must be positive integers.")
+
+
+def is_triangle_number(n):
+    """
+    A triangular number or triangle number counts objects arranged in an equilateral triangle.
+
+    0, 1, 3, 6, 10, 15, 21 ... 210, 231, etc.
+
+    Explanation of ((8 * n) + 1) ** 0.5) % 1 == 0
+        * An integer x is triangular if and only if 8x + 1 is a square
+        * We get the square root by using `** 0.5`
+        * To check if it is a whole number, we use `% 1`
+
+    :param int n: number to check if it is triangular or not
+    :return bool: True if triangular, else False
+    """
+
+    try:
+        if n < 0:
+            raise ValueError("N must be a positive integer")
+
+        if (((8 * n) + 1) ** 0.5) % 1 == 0:
+            return True
+        else:
+            return False
+    except TypeError:
+        raise TypeError("Input must be positive integers.")

@@ -37,3 +37,7 @@ print(leonhard.generate_collatz_sequence(10, []))
 
 # Cyclic permutation
 print(leonhard.generate_cyclic_permutation(123))
+
+# Triangle numbers
+print(leonhard.is_triangle_number(3))
+print(leonhard.is_triangle_number(4))

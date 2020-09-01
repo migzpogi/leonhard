@@ -19,6 +19,7 @@ A commons library for Project Euler problems.
 * `count_digits`: Counts the number of digits of a given number
 * `generate_collatz_sequence`: Generates a collatz sequence
 * `generate_cyclic_permutation`: Generates the list of cyclic permutation of a given number
+* `is_triangle_number()`: Checks if a number is triangular or not
 
 ## Samples
 Sample files are found in `samples/`

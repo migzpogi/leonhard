@@ -273,6 +273,7 @@ class TestCollatzSequence(unittest.TestCase):
         actual = leonhard.generate_collatz_sequence(837799, [])
         self.assertEqual(expected, actual)
 
+
 class TestCyclicPermutation(unittest.TestCase):
 
     def test_if_input_are_letters_then_it_must_raise_a_type_error(self):
@@ -287,6 +288,24 @@ class TestCyclicPermutation(unittest.TestCase):
         expected = [123, 312, 231]
         actual = leonhard.generate_cyclic_permutation(123)
         self.assertEqual(expected, actual)
+
+
+class TestIsTriangleNumber(unittest.TestCase):
+
+    def test_if_input_is_less_than_0_then_it_must_raise_a_value_error(self):
+        with self.assertRaises(ValueError):
+            leonhard.is_triangle_number(-1)
+
+    def test_if_input_are_letters_then_it_must_raise_a_type_error(self):
+        with self.assertRaises(TypeError):
+            leonhard.is_triangle_number('a')
+
+    def test_if_input_is_3_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_triangle_number(3))
+
+    def test_if_input_is_4_then_it_must_return_false(self):
+        self.assertFalse(leonhard.is_triangle_number(4))
+
 
 if __name__ == '__main__':
     unittest.main()
