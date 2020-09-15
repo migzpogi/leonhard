@@ -289,6 +289,16 @@ class TestCyclicPermutation(unittest.TestCase):
         actual = leonhard.generate_cyclic_permutation(123)
         self.assertEqual(expected, actual)
 
+    def test_if_input_is_1_then_it_must_return_valid(self):
+        expected = [1]
+        actual = leonhard.generate_cyclic_permutation(1)
+        self.assertEqual(expected, actual)
+
+    def test_if_input_is_0_then_it_must_return_valid(self):
+        expected = [0]
+        actual = leonhard.generate_cyclic_permutation(0)
+        self.assertEqual(expected, actual)
+
 
 class TestIsTriangleNumber(unittest.TestCase):
 
@@ -305,6 +315,9 @@ class TestIsTriangleNumber(unittest.TestCase):
 
     def test_if_input_is_4_then_it_must_return_false(self):
         self.assertFalse(leonhard.is_triangle_number(4))
+
+    def test_if_input_is_0_then_it_must_return_true(self):
+        self.assertTrue(leonhard.is_triangle_number(0))
 
 
 if __name__ == '__main__':

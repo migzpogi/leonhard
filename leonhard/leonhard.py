@@ -1,6 +1,8 @@
 from collections import deque
 from functools import reduce
 
+from leonhard.helpers import raise_if_not_positive_int
+
 
 def get_factors_of_positive_integer(n):
     """
@@ -100,13 +102,10 @@ def count_digits(n):
     :param int n: number to count the digits of
     :return int: number of digits
     """
+    raise_if_not_positive_int(n)
 
-    try:
-        if n < 0:
-            raise ValueError("Input must be positive integers")
-        return len(str(n))
-    except TypeError:
-        raise TypeError("Input must be positive integers")
+    return len(str(n))
+
 
 
 def generate_collatz_sequence(n, sequence):
@@ -118,20 +117,20 @@ def generate_collatz_sequence(n, sequence):
     :param list sequence: list that will contain the collatz sequence
     :return:
     """
-    try:
-        if n <= 0:
-            raise ValueError("N must be a positive integer")
-        sequence.append(n)
-        get_next = lambda x: int(x / 2) if x % 2 == 0 else (3 * x) + 1
-        next_number = get_next(n)
-        if next_number != 1:
-            generate_collatz_sequence(next_number, sequence)
-        else:
-            sequence.append(1)
+    raise_if_not_positive_int(n)
+    if n == 0:
+        raise ValueError("N must be a positive integer")
 
-        return sequence
-    except TypeError:
-        raise TypeError("Input must be positive integers.")
+    sequence.append(n)
+    get_next = lambda x: int(x / 2) if x % 2 == 0 else (3 * x) + 1
+    next_number = get_next(n)
+    if next_number != 1:
+        generate_collatz_sequence(next_number, sequence)
+    else:
+        sequence.append(1)
+
+    return sequence
+
 
 
 def generate_cyclic_permutation(n):
@@ -143,19 +142,16 @@ def generate_cyclic_permutation(n):
     :param int n: number to get the permutations
     :return [int]: list of cyclic permutations of n
     """
-    try:
-        if n < 0:
-            raise ValueError("N must be a positive integer")
+    raise_if_not_positive_int(n)
 
-        deque_object = deque([char for char in str(n)])
-        cyclic_permutations = []
-        for i in range(len(deque_object)):
-            cyclic_permutations.append(list(deque_object))
-            deque_object.rotate(1)
+    deque_object = deque([char for char in str(n)])
+    cyclic_permutations = []
+    for i in range(len(deque_object)):
+        cyclic_permutations.append(list(deque_object))
+        deque_object.rotate(1)
 
-        return [int("".join(p)) for p in cyclic_permutations]
-    except TypeError:
-        raise TypeError("Input must be positive integers.")
+    return [int("".join(p)) for p in cyclic_permutations]
+
 
 
 def is_triangle_number(n):
@@ -172,14 +168,9 @@ def is_triangle_number(n):
     :param int n: number to check if it is triangular or not
     :return bool: True if triangular, else False
     """
+    raise_if_not_positive_int(n)
 
-    try:
-        if n < 0:
-            raise ValueError("N must be a positive integer")
-
-        if (((8 * n) + 1) ** 0.5) % 1 == 0:
-            return True
-        else:
-            return False
-    except TypeError:
-        raise TypeError("Input must be positive integers.")
+    if (((8 * n) + 1) ** 0.5) % 1 == 0:
+        return True
+    else:
+        return False

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.1 - 15 Sep 2020
+#### Added
+* New `helpers` class for repeating operations.
+* Additional unit tests.
+#### Modified
+* Used the new helpers class to check if input is valid.
+
 ## 1.6.0 - 01 Sep 2020
 #### Added
 * `is_triangle_number()`
