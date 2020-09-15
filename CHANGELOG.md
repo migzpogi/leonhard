@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3 - 15 Sep 2020
+#### Modified
+* Pipeline automation
+
 ## 1.6.2 - 15 Sep 2020
 #### Modified
 * Pipeline fixes
