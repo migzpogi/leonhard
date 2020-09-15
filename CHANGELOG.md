@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.2 - 15 Sep 2020
+#### Modified
+* Pipeline fixes
+
 ## 1.6.1 - 15 Sep 2020
 #### Added
 * New `helpers` class for repeating operations.
