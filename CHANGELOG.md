@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.4 - 04 Mar 2021
+#### Modified
+* CI/CD improvements
+
 ## 1.6.3 - 15 Sep 2020
 #### Modified
 * Pipeline automation

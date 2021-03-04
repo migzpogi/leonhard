@@ -1,6 +1,9 @@
 # Leonhard
 A commons library for Project Euler problems.
 
+## Requirements
+* Python 3.x
+
 ## Installation
 `pip install leonhard`
 

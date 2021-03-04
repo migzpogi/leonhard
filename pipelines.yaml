@@ -78,6 +78,12 @@ stages:
           runOnce:
             deploy:
               steps:
+                - task: AzureKeyVault@1
+                  inputs:
+                    azureSubscription: 'MambaDevSVC'
+                    KeyVaultName: 'MambaDevKV'
+                    SecretsFilter: '*'
+                    RunAsPreJob: true
                 - task: UsePythonVersion@0
                   inputs:
                     versionSpec: "3.x"
@@ -88,7 +94,7 @@ stages:
                   inputs:
                     artifactName: "dist"
                     downloadPath: "$(System.DefaultWorkingDirectory)"
-                - script: twine upload --repository testpypi dist/dist/* -u $(TWINE_USER) -p $(TWINE_PASS)
+                - script: twine upload --repository testpypi dist/dist/* -u $(pypitestuser) -p $(pypitestpass)
                   displayName: "Twine upload to PyPi Test"
 
   - stage: deploy_to_prod
@@ -106,6 +112,12 @@ stages:
           runOnce:
             deploy:
               steps:
+                - task: AzureKeyVault@1
+                  inputs:
+                    azureSubscription: 'MambaDevSVC'
+                    KeyVaultName: 'MambaDevKV'
+                    SecretsFilter: '*'
+                    RunAsPreJob: true
                 - task: UsePythonVersion@0
                   inputs:
                     versionSpec: "3.x"
@@ -116,5 +128,5 @@ stages:
                   inputs:
                     artifactName: "dist"
                     downloadPath: "$(System.DefaultWorkingDirectory)"
-                - script: twine upload dist/dist/* -u $(TWINE_USER_P) -p $(TWINE_PASS_P)
+                - script: twine upload dist/dist/* -u $(pypiprduser) -p $(pypiprdpass)
                   displayName: "Twine upload to PyPi Prod"
