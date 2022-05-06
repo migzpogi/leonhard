@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.5 - 06 May 2022
+#### Modified
+* Testing if pipeline still works
+
 ## 1.6.4 - 04 Mar 2021
 #### Modified
 * CI/CD improvements
