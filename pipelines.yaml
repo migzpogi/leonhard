@@ -4,7 +4,7 @@ trigger:
       - v*
 
 pool:
-  vmImage: 'ubuntu-16.04'
+  vmImage: 'ubuntu-latest'
 
 stages:
   - stage: test
@@ -13,7 +13,7 @@ stages:
       - job: unit_tests
         displayName: "Run Unit Tests"
         pool:
-          vmImage: "ubuntu-16.04"
+          vmImage: "ubuntu-latest"
         steps:
           - task: UsePythonVersion@0
             inputs:
@@ -44,7 +44,7 @@ stages:
       - job: build_wheel
         displayName: "Build wheel file"
         pool:
-          vmImage: "ubuntu-16.04"
+          vmImage: "ubuntu-latest"
         steps:
           - task: UsePythonVersion@0
             inputs:
@@ -73,7 +73,7 @@ stages:
         displayName: "Deploy to PyPi Test"
         environment: "test"
         pool:
-          vmImage: "ubuntu-16.04"
+          vmImage: "ubuntu-latest"
         strategy:
           runOnce:
             deploy:
@@ -107,7 +107,7 @@ stages:
         displayName: "Deploy to PyPi Prod"
         environment: "release"
         pool:
-          vmImage: "ubuntu-16.04"
+          vmImage: "ubuntu-latest"
         strategy:
           runOnce:
             deploy:
