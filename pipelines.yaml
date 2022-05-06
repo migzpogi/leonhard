@@ -17,8 +17,8 @@ stages:
         steps:
           - task: UsePythonVersion@0
             inputs:
-              versionSpec: "3.x"
-            displayName: "Use Python 3.x"
+              versionSpec: "3.8"
+            displayName: "Use Python 3.8"
           - script: pip install pytest==5.3.0 pytest-cov==2.10.0
             displayName: "Install Pytest"
           - script: pytest
